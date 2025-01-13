@@ -1,0 +1,54 @@
+{
+    "name": "jacob-hyde/requestorchestrator",
+    "description": "",
+    "keywords": [
+        "jacob-hyde",
+        "requestorchestrator"
+    ],
+    "homepage": "https://github.com/jacob-hyde/requestorchestrator",
+    "license": "MIT",
+    "type": "library",
+    "authors": [
+        {
+            "name": "Jacob Hyde",
+            "email": "jacob@jacobhyde.com",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": "^8.0",
+        "illuminate/support": "^8.0"
+    },
+    "require-dev": {
+        "orchestra/testbench": "^6.47",
+        "phpunit/phpunit": "^9.6"
+    },
+    "autoload": {
+        "psr-4": {
+            "JacobHyde\\RequestOrchestrator\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "JacobHyde\\RequestOrchestrator\\Tests\\": "tests"
+        }
+    },
+    "scripts": {
+        "test": "vendor/bin/phpunit",
+        "test-coverage": "vendor/bin/phpunit --coverage-html coverage"
+
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "JacobHyde\\RequestOrchestrator\\RequestOrchestratorServiceProvider"
+            ],
+            "aliases": {
+                "RequestOrchestrator": "JacobHyde\\RequestOrchestrator\\RequestOrchestratorFacade"
+            }
+        }
+    }
+}
